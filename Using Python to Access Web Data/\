@@ -1,0 +1,15 @@
+import urllib
+import urllib.request, urllib.parse, urllib.error
+import xml.etree.ElementTree as ET
+import ssl
+import json 
+    
+address = input('Enter location: ')
+uh = urllib.request.urlopen(address)
+data = uh.read()
+
+all_data = json.loads(data)
+total = 0 
+
+for item in all_data:
+    print(item["count"])
